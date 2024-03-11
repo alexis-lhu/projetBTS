@@ -1,0 +1,33 @@
+# config/routes.yaml
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+categorie:
+    path: /categorie/{type}
+    controller: App\Controller\HomeController::categorie
+
+homme:
+    path: /homme
+    controller: App\Controller\HomeController::homme
+
+enfant:
+    path: /enfant
+    controller: App\Controller\HomeController::enfant
+
+accessoire:
+    path: /accessoire
+    controller: App\Controller\HomeController::accessoire
+
+panier:
+    path: /panier
+    controller: App\Controller\HomeController::panier
+
+login:
+    path: /login
+    controller: App\Controller\HomeController::login
+
+register:
+    path: /register
+    controller: App\Controller\HomeController::register

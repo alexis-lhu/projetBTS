@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage du Panier</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            align-self: flex-start;
+        }
+
+        .logo img {
+            width: 125px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .buttons a {
+            color: #000;
+            text-decoration: none;
+            margin: 5px 35px;
+            font-family: 'Jomhuria', sans-serif;
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .icons img {
+            width: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .header-bar {
+            height: 5px;
+            background-color: #ccc;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .icons-small img {
+            width: 40px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: #000;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .product-price {
+            width: 80px;
+            text-align: right;
+        }
+
+        .total-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .checkout-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">  
+            <img src="{{ asset('images/Logo2.png') }}" alt="Logo">
+        </div>
+        <div class="buttons">
+            <a href="{{ path('home') }}">ACCUEIL</a>
+            <a href="{{ path('categorie', {'type': 'homme'}) }}">HOMME</a>
+            <a href="{{ path('categorie', {'type': 'femme'}) }}">FEMME</a>
+            <a href="{{ path('categorie', {'type': 'enfant'}) }}">ENFANT</a>
+            <a href="{{ path('categorie', {'type': 'accessoire'}) }}">ACCESSOIRE</a>
+        </div>
+
+        <div class="icons">
+                <a href="{{ path('panier') }}">
+        <img src="{{ asset('images/Panier.png') }}" alt="Panier">
+    </a>
+            <div class="dropdown">
+                <div class="icons-small">
+                    <img src="{{ asset('images/Compte.png') }}" alt="Compte" style="width: 30px;">
+                </div>
+                <div class="dropdown-content">
+                    <a href="{{ path('categorie', {'type': 'login'}) }}">Se connecter</a>
+                    <a href="{{ path('categorie', {'type': 'register'}) }}">S'enregistrer</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bar"></div>
+    </header>
+
+    <section>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="{{ asset('images/Chaussure_4.png') }}" alt="Chaussure 1" style="width: 100px;">
+            </div>
+            <div class="product-details">
+                <p>Nike Air Max</p>
+                <p>Taille: 42</p>
+                <p>Quantité: 2</p>
+            </div>
+            <div class="product-price">
+                100 €
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <img src="{{ asset('images/Chaussure_4.png') }}" alt="Chaussure 2" style="width: 100px;">
+            </div>
+            <div class="product-details">
+                <p>Adidas Superstar</p>
+                <p>Taille: 39</p>
+                <p>Quantité: 1</p>
+            </div>
+            <div class="product-price">
+                50 €
+            </div>
+        </div>
+
+        <!-- Total du panier -->
+        <div class="total-container">
+            <span>Total à Payer:</span>
+            <span>250 €</span>
+        </div>
+
+        <button class="checkout-button">Payer</button>
+    </section>
+</body>
+</html>
