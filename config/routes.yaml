@@ -4,17 +4,18 @@ home:
     path: /
     controller: App\Controller\HomeController::index
 
-categorie:
-    path: /categorie/{type}
-    controller: App\Controller\HomeController::categorie
 
 homme:
     path: /homme
-    controller: App\Controller\HomeController::homme
+    controller: App\Controller\ProductController::homme
+
+femme:
+    path: /femme
+    controller: App\Controller\ProductController::femme
 
 enfant:
     path: /enfant
-    controller: App\Controller\HomeController::enfant
+    controller: App\Controller\ProductController::enfant
 
 accessoire:
     path: /accessoire

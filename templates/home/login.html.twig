@@ -8,16 +8,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-        }
-
-        .login-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            color: #fff;
+            background-color: #f5f5f5;
         }
 
         header {
@@ -27,27 +18,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
-        }
-
-        #titreConnexion {
-            text-align: center;
-        }
-
-        #boutonConnexion {
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-            padding: 5px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: 'Jomhuria', sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-            margin-left: 25%;
-        }
-
-        .logo {
-            align-self: flex-start;
         }
 
         .logo img {
@@ -64,10 +36,10 @@
         .buttons a {
             color: #000;
             text-decoration: none;
-            margin: 5px 35px;
+            margin: 0 15px;
             font-family: 'Jomhuria', sans-serif;
             font-weight: bold;
-            font-size: 35px;
+            font-size: 24px;
         }
 
         .icons {
@@ -77,14 +49,14 @@
         }
 
         .icons img {
-            width: 40px;
+            width: 30px;
             margin: 0 10px;
             cursor: pointer;
         }
 
         .header-bar {
             height: 5px;
-            background-color: #ccc;
+            background-color: #007BFF;
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -101,7 +73,7 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
             right: 0;
             text-align: left;
@@ -111,96 +83,68 @@
             display: block;
         }
 
-        .icons-small img {
-            width: 40px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
         .dropdown-content a {
             display: block;
             padding: 10px;
             color: #000;
-        }
-
-        .product-image {
-            position: relative;
-        }
-
-        .product-image::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: 0.5;
-        }
-
-        .product-container {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
-        }
-
-        .product-image {
-            max-width: 20%;
-            height: auto;
-            display: block;
-            margin: 50px;
-            margin-bottom: 10px;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .product-content {
-            padding-left: 20px;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .product-title {
-            margin-bottom: 2px;
-            font-family: 'Jomhuria', sans-serif; /* Remplacez 'VotrePolice' par le nom de votre police */
-            font-weight: bold;
-            font-size: 45px;
-        }
-
-        .product-subtitle {
-            margin-bottom: 2px;
-            font-family: 'Jomhuria', sans-serif;
-            font-style: italic;    
-            font-size: 25px;
-        }
-
-        .product-description {
-            color: #555;
-            font-size: 20px;
-        }
-
-        .product-price {
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background-color: black;
-            color: white;
-            padding: 5px 25px;
-            border-radius: 5px;
             text-decoration: none;
             font-family: 'Jomhuria', sans-serif;
             font-weight: bold;
-            font-size: 30px;
         }
 
-        .separator {
-            width: 50px;
-            height: 100%;
-            background-color: black;
-            border-radius: 0 20px 20px 0;
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Jomhuria', sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Jomhuria', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -211,15 +155,15 @@
         </div>
         <div class="buttons">
             <a href="{{ path('home') }}">ACCUEIL</a>
-            <a href="{{ path('categorie', {'type': 'homme'}) }}">HOMME</a>
-            <a href="{{ path('categorie', {'type': 'femme'}) }}">FEMME</a>
-            <a href="{{ path('categorie', {'type': 'enfant'}) }}">ENFANT</a>
+            <a href="{{ path('homme') }}">HOMME</a>
+            <a href="{{ path('femme') }}">FEMME</a>
+            <a href="{{ path('enfant') }}">ENFANT</a>
             <a href="{{ path('categorie', {'type': 'accessoire'}) }}">ACCESSOIRE</a>
         </div>
 
         <div class="icons">
             <a href="{{ path('categorie', {'type': 'panier'}) }}">
-            <img src="{{ asset('images/Panier.png') }}" alt="Panier">
+                <img src="{{ asset('images/Panier.png') }}" alt="Panier">
             </a>
             <div class="dropdown">
                 <div class="icons-small">
@@ -238,9 +182,9 @@
         <h1 id="titreConnexion">Connexion</h1>
         <form action="/login" method="POST">
             <label for="username">Nom d'utilisateur:</label>
-            <input type="text" id="username" name="username" required><br><br>
+            <input type="text" id="username" name="username" required>
             <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" required>
             <input id="boutonConnexion" type="submit" value="Se connecter">
         </form>
     </div>
